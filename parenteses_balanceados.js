@@ -20,3 +20,18 @@ Exemplo 3:
 Entrada: palavra="())("
 Saída: 2 */
 
+function main(palavra){
+	const countPalavra = palavra.length;
+    let countParenteses = 0;
+    for(let i = 1; i <= countPalavra; i++){
+        let iDireita = palavra[i];
+        let iEsquerda = palavra[i-1];
+        if(iEsquerda+iDireita === "()"){
+            countParenteses++
+        };
+    }
+    let qtd = countPalavra - countParenteses*2;
+
+    return qtd;
+}
+
